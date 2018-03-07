@@ -27,15 +27,15 @@ public class Chapter8 extends JFrame implements Runnable, WebcamPanel.Painter {
 
 	private static final Executor EXECUTOR = Executors.newSingleThreadExecutor();
 	private static final HaarCascadeDetector detector = new HaarCascadeDetector();
-	private static final Stroke STROKE = new BasicStroke(1.0f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER, 1.0f,
-			new float[] { 1.0f }, 0.0f);
+	private static final Stroke STROKE = new BasicStroke(4.0f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER, 1.0f,
+			new float[] { 5.0f }, 0.0f);
 
 	private Webcam webcam = null;
 	private WebcamPanel.Painter painter = null;
 	private List<DetectedFace> faces = null;
 
 	public Chapter8() throws IOException {
-
+		
 		webcam = Webcam.getDefault();
 		webcam.setCustomViewSizes(dim);
 		webcam.open(true);
@@ -56,7 +56,7 @@ public class Chapter8 extends JFrame implements Runnable, WebcamPanel.Painter {
 		pack();
 		setLocationRelativeTo(null);
 		setVisible(true);
-
+		setResizable(false);
 		EXECUTOR.execute(this);
 	}
 
@@ -106,9 +106,7 @@ public class Chapter8 extends JFrame implements Runnable, WebcamPanel.Painter {
 		}
 	}
 
-
-	public void loadChapter8() throws IOException {
+	public static void loadChapter8() throws IOException {
 		new Chapter8();
 	}
-
 }

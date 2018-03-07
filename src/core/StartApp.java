@@ -71,8 +71,7 @@ public class StartApp extends Application  {
 
 			break;
 		case 7:
-			Chapter8 c8 = new Chapter8();
-			c8.loadChapter8();
+			Chapter8.loadChapter8();
 			
 			break;
 		case 8:
